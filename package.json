@@ -11,6 +11,7 @@
     "setup": "prisma generate && prisma migrate deploy && prisma db seed",
     "start": "remix-serve ./build/index.js",
     "start:mocks": "binode --require ./mocks -- @remix-run/serve:remix-serve ./build/index.js",
+    "deploy": "scp -r ./build tylergraf@raspberry.local:~/dev/monitor/",
     "test": "vitest",
     "test:e2e:dev": "start-server-and-test dev http://localhost:3000 \"npx cypress open\"",
     "pretest:e2e:run": "npm run build",
@@ -39,7 +40,6 @@
   "devDependencies": {
     "@faker-js/faker": "^8.2.0",
     "@remix-run/dev": "^2.7.2",
-    "@testing-library/cypress": "^10.0.1",
     "@testing-library/jest-dom": "^6.1.4",
     "@types/bcryptjs": "^2.4.5",
     "@types/eslint": "^8.44.6",
@@ -54,7 +54,6 @@
     "binode": "^1.0.5",
     "cookie": "^0.5.0",
     "cross-env": "^7.0.3",
-    "cypress": "^13.3.2",
     "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",
